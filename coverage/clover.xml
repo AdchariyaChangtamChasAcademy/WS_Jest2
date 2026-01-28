@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1769604938947" clover="3.2.0">
-  <project timestamp="1769604938947" name="All files">
+<coverage generated="1769606785457" clover="3.2.0">
+  <project timestamp="1769606785457" name="All files">
     <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4" elements="13" coveredelements="13" complexity="0" loc="7" ncloc="7" packages="1" files="1" classes="1"/>
-    <file name="calculator.js" path="C:\Projects\DOTNET\Workshop\WS_Jest2\calculator.js">
+    <file name="calculator.js" path="C:\Projects\DOTNET\Workshop\WS_Jest2\src\calculator.js">
       <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
       <line num="2" count="2" type="stmt"/>
       <line num="6" count="2" type="stmt"/>

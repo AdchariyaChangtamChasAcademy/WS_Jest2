@@ -30,12 +30,28 @@ jobs:
       - name: Run linter
         run: npm run lint || echo "No linter configured"
       
-      - name: Run tests
+      # - name: Run tests
+      #   run: npm test -- --coverage
+      
+      # - name: Upload coverage to Codecov
+      #   uses: codecov/codecov-action@v3
+      #   with:
+      #     files: ./coverage/coverage-final.json
+      #     flags: unittests
+      #     name: codecov-umbrella
+
+      - name: Run tests with coverage
         run: npm test -- --coverage
       
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v3
         with:
-          files: ./coverage/coverage-final.json
-          flags: unittests
-          name: codecov-umbrella
+          name: coverage-report
+          path: coverage/
+      
+      - name: Comment coverage on PR
+        if: github.event_name == 'pull_request'
+        uses: romeovs/lcov-reporter-action@v0.3.1
+        with:
+          github-token: $ secrets.GITHUB_TOKEN 
+          lcov-file: ./coverage/
